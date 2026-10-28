@@ -1,4 +1,5 @@
 
+
 terraform {
   required_providers {
     google = {
@@ -47,6 +48,16 @@ resource "google_cloud_run_v2_service" "fastapi" {
         }
       }
     }
+  }
+
+  # GitHub Actions manages the image version.
+  # Ignore deployment metadata managed by gcloud.
+  lifecycle {
+    ignore_changes = [
+      client,
+      client_version,
+      template[0].containers[0].image
+    ]
   }
 }
 
