@@ -1,0 +1,30 @@
+
+# Terraform local files and state
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+terraform.tfvars
+*.auto.tfvars
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.json.key
+credentials.json
+application_default_credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
